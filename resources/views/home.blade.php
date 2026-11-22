@@ -4,6 +4,11 @@
 
 @section('content')
 
+    @php
+        // Ambil data dari tabel table_home kalau route tidak mengirim $homes
+        $homes = $homes ?? \Illuminate\Support\Facades\DB::table('table_home')->get();
+    @endphp
+
     {{--HERO--}}
     <header class="bg-indigo-600 text-white">
         <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-10">
